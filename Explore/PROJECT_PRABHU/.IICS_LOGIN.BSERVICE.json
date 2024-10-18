@@ -1,0 +1,53 @@
+{
+  "objectInfo" : {
+    "id" : "5kjB7e4nejIhoHTw4AxgAT",
+    "name" : "IICS_LOGIN",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ27000000000004"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "01CWNJ28000000000004",
+        "value" : "5kjB7e4nejIhoHTw4AxgAT@IICS_LOGIN"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-10-18T10:01:01.937Z",
+  "objectRefs" : [ {
+    "id" : "3anUdq3NlAHbX2oHUk1d0F",
+    "name" : "Prabhu_IICS_LOGIN_REST_V2",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ0B000000000011"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

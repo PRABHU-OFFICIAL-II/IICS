@@ -1,0 +1,214 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>YvMBu8zbgdwUiQL-gt-5422965-2024-08-22T06:54:30.814Z::tf.xml</types1:EntryId>
+      <types1:Name>TF_Read_Time_Stamp</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>ppenthoisuborg</types1:CreatedBy>
+      <types1:CreationDate>2024-08-22T06:54:31Z</types1:CreationDate>
+      <types1:ModifiedBy>ppenthoisuborg</types1:ModifiedBy>
+      <types1:ModificationDate>2024-09-04T05:49:29Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>ppenthoisuborg</types1:PublishedBy>
+      <types1:PublicationDate>2024-08-23T06:18:31Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.TF_Read_Time_Stamp/TF_Read_Time_Stamp.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="TF_Read_Time_Stamp"
+                   name="TF_Read_Time_Stamp"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Read Time Stamp" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-Read-Time-Stamp-1LdTk7KZe4GeYWpUuYWtcr</option>
+                  </options>
+               </field>
+               <field description="" name="ProcessZeroRecordsFile" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="m06akncp" targetId="m06akncu"/>
+               </start>
+               <eventContainer id="m06akncu">
+                  <service id="m06aknco">
+                     <title>Read Time Stamp</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_Read_Time_Stamp</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">1LdTk7KZe4GeYWpUuYWtcr</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-Read-Time-Stamp-1LdTk7KZe4GeYWpUuYWtcr">temp.Read Time Stamp</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Read Time Stamp/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Read Time Stamp/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m06akngp" targetId="m06aknid"/>
+                  <events>
+                     <catch faultField="temp.Read Time Stamp/fault"
+                            id="m06akncs"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Read Time Stamp/fault"
+                            id="m06aknct"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m06aknid">
+                  <service id="m06akngo">
+                     <title>ProcessZeroRecordsFile</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">ProcessZeroRecordsFile</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">01CWNJ25000000000002:INWPF3M1V35-AAD</parameter>
+                        <parameter name="Max Wait" source="constant">86400</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">a18W8JEnANskA5vxO8qM4e</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.ProcessZeroRecordsFile</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">C:\Users\ppenthoi\scripts\ProcessZeroRecords.bat</operation>
+                           <operation source="constant"
+                                      to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir">C:\Users\ppenthoi\scripts</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.ProcessZeroRecordsFile/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.ProcessZeroRecordsFile/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.ProcessZeroRecordsFile/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.ProcessZeroRecordsFile/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.ProcessZeroRecordsFile/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.ProcessZeroRecordsFile/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m06akngq" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.ProcessZeroRecordsFile/fault"
+                            id="m06aknic"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-Read-Time-Stamp-1LdTk7KZe4GeYWpUuYWtcr"
+                              isByCopy="true"
+                              name="mt-Read-Time-Stamp-1LdTk7KZe4GeYWpUuYWtcr">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>39CVI6jh1hndxkWsecqLGd</types1:GUID>
+      <types1:DisplayName>TF_Read_Time_Stamp</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-10-18T10:00:55.182Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

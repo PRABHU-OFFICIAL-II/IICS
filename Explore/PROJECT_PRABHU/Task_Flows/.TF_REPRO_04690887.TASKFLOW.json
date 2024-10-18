@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "hKwWUKrUSCWi5p7k3pfXc0",
+    "name" : "TF_REPRO_04690887",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "zLPJljxcghuImXy-gt-8648961-2024-07-17T12:50:19.407Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Task Flow Repro for the case 04690887, Creating a Notification task and check if the output is coming in proper formatted way.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-10-18T10:01:01.924Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

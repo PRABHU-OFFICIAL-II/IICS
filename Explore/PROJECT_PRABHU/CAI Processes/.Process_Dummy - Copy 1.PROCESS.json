@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "5vRD6yq0upkd8k3nd4k9IM",
+    "name" : "Process_Dummy - Copy 1",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "2jop81V4AdypKwK-gt-127465449-2024-07-10T09:12:52.861Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-10-18T10:01:01.939Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

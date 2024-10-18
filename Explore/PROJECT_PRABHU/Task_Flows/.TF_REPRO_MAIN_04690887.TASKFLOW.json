@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "7H00rZ1S3j0g0ewAx8uAas",
+    "name" : "TF_REPRO_MAIN_04690887",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "cnKf3eFhBJQWSwx-gt-7818037-2024-07-17T14:35:48.046Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-10-18T10:01:01.931Z",
+  "objectRefs" : [ {
+    "id" : "hKwWUKrUSCWi5p7k3pfXc0",
+    "name" : "TF_REPRO_04690887",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "zLPJljxcghuImXy-gt-8648961-2024-07-17T12:50:19.407Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Task Flow Repro for the case 04690887, Creating a Notification task and check if the output is coming in proper formatted way.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PROJECT_PRABHU/Task_Flows"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "0VrKBmgwMmNbpdKqpuhRGP",
+    "name" : "mtt_Session_log_Ingestion",
+    "type" : "MI_TASK",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "83373"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Ingesting files of type Session Logs from the local directory",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "dat",
+  "updateTime" : "2024-10-18T10:01:01.932Z",
+  "objectRefs" : [ {
+    "id" : "a18W8JEnANskA5vxO8qM4e",
+    "name" : "INWPF3M1V35-AAD",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ25000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

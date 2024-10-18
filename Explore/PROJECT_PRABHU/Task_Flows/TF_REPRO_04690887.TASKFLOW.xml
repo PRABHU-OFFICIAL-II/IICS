@@ -1,0 +1,85 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>zLPJljxcghuImXy-gt-8648961-2024-07-17T12:50:19.407Z::tf.xml</types1:EntryId>
+      <types1:Name>TF_REPRO_04690887</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description>Task Flow Repro for the case 04690887, Creating a Notification task and check if the output is coming in proper formatted way.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>ppenthoisuborg</types1:CreatedBy>
+      <types1:CreationDate>2024-07-17T12:50:19Z</types1:CreationDate>
+      <types1:ModifiedBy>ppenthoisuborg</types1:ModifiedBy>
+      <types1:ModificationDate>2024-07-17T18:48:35Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>ppenthoisuborg</types1:PublishedBy>
+      <types1:PublicationDate>2024-07-18T05:17:25Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.TF_REPRO_04690887/TF_REPRO_04690887.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="TF_REPRO_04690887"
+                   name="TF_REPRO_04690887"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Task Flow Repro for the case 04690887, Creating a Notification task and check if the output is coming in proper formatted way.</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="recipients" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="subject" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="body" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="lyptz3gr" targetId="lyptz3gq"/>
+               </start>
+               <service id="lyptz3gq">
+                  <title>Email Notification Task</title>
+                  <serviceName>emailNotificationService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Email To" source="constant">{$input.recipients}</parameter>
+                     <parameter name="Email Cc" source="constant"/>
+                     <parameter name="Email Bcc" source="constant"/>
+                     <parameter name="Email Subject" source="constant">{$input.subject} </parameter>
+                     <parameter name="Email Content Type" source="constant">html</parameter>
+                     <parameter name="Email Body" source="constant">&lt;p&gt;{$input.body}&lt;/p&gt;</parameter>
+                  </serviceInput>
+                  <serviceOutput/>
+                  <link id="lyptz3gs" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>hKwWUKrUSCWi5p7k3pfXc0</types1:GUID>
+      <types1:DisplayName>TF_REPRO_04690887</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-10-18T10:00:37.704Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

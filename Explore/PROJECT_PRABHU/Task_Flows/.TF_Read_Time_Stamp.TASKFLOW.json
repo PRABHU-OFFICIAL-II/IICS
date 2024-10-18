@@ -1,0 +1,70 @@
+{
+  "objectInfo" : {
+    "id" : "39CVI6jh1hndxkWsecqLGd",
+    "name" : "TF_Read_Time_Stamp",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "YvMBu8zbgdwUiQL-gt-5422965-2024-08-22T06:54:30.814Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-10-18T10:01:01.930Z",
+  "objectRefs" : [ {
+    "id" : "a18W8JEnANskA5vxO8qM4e",
+    "name" : "INWPF3M1V35-AAD",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ25000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "1LdTk7KZe4GeYWpUuYWtcr",
+    "name" : "mt_Read_Time_Stamp",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ0Z000000000022"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PROJECT_PRABHU"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

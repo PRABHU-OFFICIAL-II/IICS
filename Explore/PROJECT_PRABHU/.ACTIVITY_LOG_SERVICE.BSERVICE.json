@@ -1,0 +1,53 @@
+{
+  "objectInfo" : {
+    "id" : "lxaec7Bax2tlvSx7jNE04k",
+    "name" : "ACTIVITY_LOG_SERVICE",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ27000000000005"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "01CWNJ28000000000005",
+        "value" : "lxaec7Bax2tlvSx7jNE04k@IICS_ACTIVITY_LOG"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-10-18T10:01:01.936Z",
+  "objectRefs" : [ {
+    "id" : "ayVzCo6reINkBVm8rUJEsN",
+    "name" : "Prabhu_IICS_ACTIVITY_LOG_REST_V2",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ0B000000000012"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

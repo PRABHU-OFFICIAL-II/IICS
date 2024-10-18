@@ -1,0 +1,66 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>2jop81V4AdypKwK-gt-127465449-2024-07-10T09:12:52.861Z::pd.xml</types1:EntryId>
+      <types1:Name>Process_Dummy_-_Copy_1</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:INWPF3M1V35-AAD</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>ppenthoisuborg</types1:CreatedBy>
+      <types1:CreationDate>2024-07-10T09:12:53Z</types1:CreationDate>
+      <types1:ModifiedBy>ppenthoisuborg</types1:ModifiedBy>
+      <types1:ModificationDate>2024-07-10T09:13:17Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>ppenthoisuborg</types1:PublishedBy>
+      <types1:PublicationDate>2024-07-10T09:14:45Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Process_Dummy_-_Copy_1/Process_Dummy_-_Copy_1.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Process_Dummy - Copy 1"
+                  name="Process_Dummy_-_Copy_1"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:INWPF3M1V35-AAD</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="Test" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
+               <targetLocation>INWPF3M1V35-AAD</targetLocation>
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="lyfm7hn4" targetId="lyfm7hn3"/>
+               </start>
+               <assignment id="lyfm7hn3">
+                  <title>Assignment to Test</title>
+                  <operation source="constant" to="input.Test">Prabhu</operation>
+                  <link id="lyfm7hn5" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>5vRD6yq0upkd8k3nd4k9IM</types1:GUID>
+      <types1:DisplayName>Process_Dummy - Copy 1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-10-18T10:00:37.721Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,120 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>IYHSCpwNXHS45bf-gt-6156599-2024-07-21T10:40:41.56Z::svc.xml</types1:EntryId>
+      <types1:Name>REST_Service_Connector</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Service connector for REST API Employee</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>ppenthoisuborg</types1:CreatedBy>
+      <types1:CreationDate>2024-07-21T10:40:42Z</types1:CreationDate>
+      <types1:ModifiedBy>ppenthoisuborg</types1:ModifiedBy>
+      <types1:ModificationDate>2024-07-21T10:54:49Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>ppenthoisuborg</types1:PublishedBy>
+      <types1:PublicationDate>2024-07-21T10:54:54Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/REST_Service_Connector/REST_Service_Connector_svcDef.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="REST_Service_Connector"
+                            label=""
+                            name="REST_Service_Connector"
+                            uuid="7f20e06b-92ab-43c6-8fc8-4c812b9c18ab">
+            <description>Service connector for REST API Employee</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category="Dummy REST API"
+                       failOnError="true"
+                       forSearch="false"
+                       label="getEmployeeDetails"
+                       maxRedirects="100"
+                       name="getEmployeeDetails"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://dummy.restapiexample.com/api/v1/employees?$format=json"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Success or Failure Status"
+                            name="status"
+                            property="status"
+                            type="string"/>
+                     <field description="Actual employee Data"
+                            name="data"
+                            property="data"
+                            type="objectlist">
+                        <options>
+                           <option name="relationshipName">Child</option>
+                           <option name="referenceTo">$po:$any</option>
+                        </options>
+                     </field>
+                     <field description="Success ir Failure Message&#xA;"
+                            name="message"
+                            property="message"
+                            type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              xmlns:aetgt="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                              isByCopy="true"
+                              name="root">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="data" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">data</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="message" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              xmlns:aetgt="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                              isByCopy="true"
+                              name="data">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="profile_image"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="employee_name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="employee_salary"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                     <field name="id" nullable="true" required="false" type="int"/>
+                     <field name="employee_age" nullable="true" required="false" type="int"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>e1EHPu7xxmuhIo1fWR2Oq2</types1:GUID>
+      <types1:DisplayName>REST_Service_Connector</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-10-18T10:00:37.74Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

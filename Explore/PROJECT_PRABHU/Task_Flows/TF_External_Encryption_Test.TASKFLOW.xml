@@ -1,0 +1,218 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>mfSTu0kMVX3cjk9-gt-32834000-2024-10-03T08:13:24.202Z::tf.xml</types1:EntryId>
+      <types1:Name>TF_External_Encryption_Test</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>ppenthoisuborg</types1:CreatedBy>
+      <types1:CreationDate>2024-10-03T08:13:24Z</types1:CreationDate>
+      <types1:ModifiedBy>ppenthoisuborg</types1:ModifiedBy>
+      <types1:ModificationDate>2024-10-14T11:54:53Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>ppenthoisuborg</types1:PublishedBy>
+      <types1:PublicationDate>2024-10-03T17:24:22Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.TF_External_Encryption_Test/TF_External_Encryption_Test.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="TF_External_Encryption_Test"
+                   name="TF_External_Encryption_Test"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="encryption call" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="extraction_of_decrypted_data" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-Base64-External-aL85oGO5Ro3da7TFf94Eys</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="m28xjlj0" targetId="m1t0pp72"/>
+               </start>
+               <eventContainer id="m1t0pp72">
+                  <service id="m1t0pp65">
+                     <title>encryption call</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">encryption call</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">01CWNJ25000000000002:INWPF3M1V35-AAD</parameter>
+                        <parameter name="Max Wait" source="constant">86400</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">a18W8JEnANskA5vxO8qM4e</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.encryption call</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">C:\Users\ppenthoi\OneDrive - Informatica\Documents\IDMC\Project INFA\EncryptionOutsideIICSTest\encryption.bat</operation>
+                           <operation source="constant"
+                                      to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir">C:\Users\ppenthoi\OneDrive - Informatica\Documents\IDMC\Project INFA\EncryptionOutsideIICSTest</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.encryption call/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.encryption call/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.encryption call/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.encryption call/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.encryption call/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.encryption call/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m1t0pp7k" targetId="m1t0pp7p"/>
+                  <events>
+                     <catch faultField="temp.encryption call/fault"
+                            id="m1t0pp71"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m1t0pp7p">
+                  <service id="m1t0pp7j">
+                     <title>extraction_of_decrypted_data</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_Base64_External</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">aL85oGO5Ro3da7TFf94Eys</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-Base64-External-aL85oGO5Ro3da7TFf94Eys">temp.extraction_of_decrypted_data</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.extraction_of_decrypted_data/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.extraction_of_decrypted_data/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.extraction_of_decrypted_data/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.extraction_of_decrypted_data/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.extraction_of_decrypted_data/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.extraction_of_decrypted_data/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.extraction_of_decrypted_data/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.extraction_of_decrypted_data/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.extraction_of_decrypted_data/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.extraction_of_decrypted_data/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.extraction_of_decrypted_data/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.extraction_of_decrypted_data/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.extraction_of_decrypted_data/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.extraction_of_decrypted_data/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m28xjlis" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.extraction_of_decrypted_data/fault"
+                            id="m1t0pp7n"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.extraction_of_decrypted_data/fault"
+                            id="m1t0pp7o"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-Base64-External-aL85oGO5Ro3da7TFf94Eys"
+                              isByCopy="true"
+                              name="mt-Base64-External-aL85oGO5Ro3da7TFf94Eys">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>2yxu5SFJJruiX5zRva2uak</types1:GUID>
+      <types1:DisplayName>TF_External_Encryption_Test</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-10-18T10:00:47.978Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

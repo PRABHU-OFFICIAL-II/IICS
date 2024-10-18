@@ -1,0 +1,283 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>DkSSHCwkNmumf6S-gt-10423605-2024-08-16T11:32:42.481Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_Trigger_On_File_Arrival</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>ppenthoisuborg</types1:CreatedBy>
+      <types1:CreationDate>2024-08-16T11:32:42Z</types1:CreationDate>
+      <types1:ModifiedBy>ppenthoisuborg</types1:ModifiedBy>
+      <types1:ModificationDate>2024-08-16T11:51:19Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>ppenthoisuborg</types1:PublishedBy>
+      <types1:PublicationDate>2024-08-16T11:51:23Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_Trigger_On_File_Arrival/tf_Trigger_On_File_Arrival.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_Trigger_On_File_Arrival"
+                   name="tf_Trigger_On_File_Arrival"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="Prabhu_File_Listener" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">fbP36NdawMJhTXMxSTa7Sa</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="Count number of files" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <event eventSource="fileListenerTask:Prabhu_File_Listener"/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="lzwmhbl0" targetId="lzwmhblw"/>
+               </start>
+               <eventContainer id="lzwmhblw">
+                  <service id="lzwmhbkz">
+                     <title>Count number of files</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">Count number of files</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">01CWNJ25000000000002:INWPF3M1V35-AAD</parameter>
+                        <parameter name="Max Wait" source="constant">86400</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">a18W8JEnANskA5vxO8qM4e</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.Count number of files</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">C:\Users\ppenthoi\file_counter.bat</operation>
+                           <operation source="constant"
+                                      to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir">C:\Users\ppenthoi</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Count number of files/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Count number of files/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Count number of files/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Count number of files/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.Count number of files/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.Count number of files/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="lzwmhbmx" targetId="lzwmhbmd"/>
+                  <events>
+                     <catch faultField="temp.Count number of files/fault"
+                            id="lzwmhblv"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <service id="lzwmhbmd">
+                  <title>Send Email</title>
+                  <serviceName>emailNotificationService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Email To" source="constant">ppenthoi@informatica.com</parameter>
+                     <parameter name="Email Cc" source="constant"/>
+                     <parameter name="Email Bcc" source="constant"/>
+                     <parameter name="Email Subject" source="constant">File Arrived</parameter>
+                     <parameter name="Email Content Type" source="constant">html</parameter>
+                     <parameter name="Email Body" source="constant">&lt;p&gt;{$input.Prabhu_File_Listener[1]/arrivedFiles[1]/name}&lt;/p&gt;</parameter>
+                  </serviceInput>
+                  <serviceOutput/>
+                  <link id="lzwmhbmf" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895">
+                  <description>This process object represents a taskflow specific file task field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Arrived Files"
+                            name="arrivedFiles"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-arrivedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field label="Update Files"
+                            name="updatedFiles"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-updatedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field label="Deleted Files"
+                            name="deletedFiles"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-deletedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-arrivedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-arrivedFiles">
+                  <description>This process object represents a arrivedFiles structure of the file task field.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path"
+                            name="path"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Name"
+                            name="name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Size"
+                            name="size"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Last Modified"
+                            name="lastModified"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-updatedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-updatedFiles">
+                  <description>This process object represents a updatedFiles structure of the file task field.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path"
+                            name="path"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Name"
+                            name="name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Size"
+                            name="size"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Last Modified"
+                            name="lastModified"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-deletedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-deletedFiles">
+                  <description>This process object represents file listener task deletedFiles structure.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path"
+                            name="path"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Name"
+                            name="name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Size"
+                            name="size"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Last Modified"
+                            name="lastModified"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>8RiH2qVPN6MiNGJeTsJDgx</types1:GUID>
+      <types1:DisplayName>tf_Trigger_On_File_Arrival</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-10-18T10:00:37.626Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

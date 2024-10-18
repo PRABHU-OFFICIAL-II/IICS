@@ -1,0 +1,50 @@
+{
+  "objectInfo" : {
+    "id" : "apcQ6vPFzvGgGi8QFt6mSg",
+    "name" : "TaskFlow_Test_2",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Chs9pNz6HKoJBUh-gt-1453161-2024-08-20T09:54:00.459Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-10-18T10:01:01.934Z",
+  "objectRefs" : [ {
+    "id" : "bHULbzTAdQbfGfzwI4pZi9",
+    "name" : "mt_retrieving_dates",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ0Z00000000000N"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PROJECT_PRABHU"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

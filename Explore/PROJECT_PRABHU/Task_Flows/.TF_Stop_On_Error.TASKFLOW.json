@@ -1,0 +1,50 @@
+{
+  "objectInfo" : {
+    "id" : "7Xt0YdAsX0pbZ16QgFxkCo",
+    "name" : "TF_Stop_On_Error",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "yIYmWR7hsAVR3aa-gt-6657537-2024-08-23T06:41:06.394Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-10-18T10:01:01.942Z",
+  "objectRefs" : [ {
+    "id" : "2cPlZgwRWd8bgYNy9dhHKT",
+    "name" : "MT_Addign_Rows_Repro",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ0Z000000000011"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PROJECT_PRABHU"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
