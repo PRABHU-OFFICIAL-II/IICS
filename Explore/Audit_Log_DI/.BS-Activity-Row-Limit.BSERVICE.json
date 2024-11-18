@@ -1,0 +1,53 @@
+{
+  "objectInfo" : {
+    "id" : "3PTWu3VcEvbksyXHNnnDCY",
+    "name" : "BS-Activity-Row-Limit",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ27000000000003"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "01CWNJ28000000000003",
+        "value" : "3PTWu3VcEvbksyXHNnnDCY@getActivityLogRowlimit"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-11-18T06:09:13.089Z",
+  "objectRefs" : [ {
+    "id" : "9iK0A0H1pv8jcEsjrKZhMG",
+    "name" : "conn-ICS-Activity-Rowlimit",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01CWNJ0B00000000001A"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
