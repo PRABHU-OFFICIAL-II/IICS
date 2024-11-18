@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "5PrrCXaMSUtgy3au3eRneW",
+    "name" : "Audit_Log_DI",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "This project holds all the IICS Audit mappings (DI) which loads data from IICS Audit API to CSV and postgresql DB ",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-11-18T06:09:13.090Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
