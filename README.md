@@ -1,3 +1,1 @@
-"# IICS" 
-"# IICS" 
-"# IICS" 
+# This is a sample README
